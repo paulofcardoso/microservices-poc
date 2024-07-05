@@ -2,19 +2,19 @@ FROM python:3.9-slim
 
 WORKDIR /usr/src/app
 
-COPY app1/ app1/
-COPY app2/ app2/
+COPY service1/ service1/
+COPY service2/ service2/
 COPY gateway/ gateway/
 
 RUN pip install virtualenv
 
-# app1
-RUN virtualenv /usr/src/app/app1_env
-RUN /usr/src/app/app1_env/bin/pip install --no-cache-dir -r app1/requirements.txt
+# service1
+RUN virtualenv /usr/src/app/service1_env
+RUN /usr/src/app/service1_env/bin/pip install --no-cache-dir -r service1/requirements.txt
 
-# app2
-RUN virtualenv /usr/src/app/app2_env
-RUN /usr/src/app/app2_env/bin/pip install --no-cache-dir -r app2/requirements.txt
+# service2
+RUN virtualenv /usr/src/app/service2_env
+RUN /usr/src/app/service2_env/bin/pip install --no-cache-dir -r service2/requirements.txt
 
 # gateway
 RUN virtualenv /usr/src/app/gateway_env

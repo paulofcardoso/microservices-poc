@@ -11,5 +11,5 @@ def read_root():
         success = True
     except AttributeError:
         print("AttributeError")
-    return {"message": f"Hello from app 2! Success: {success} with numpy "
+    return {"message": f"Hello from service 2! Success: {success} with numpy "
                        f"version {np.__version__}"}
